@@ -15,19 +15,6 @@ default_args = {
     'email_on_retry': False,
     'retries': 1,
     'retry_delay': timedelta(minutes=5),
-    # 'queue': 'bash_queue',
-    # 'pool': 'backfill',
-    # 'priority_weight': 10,
-    # 'end_date': datetime(2019, 1, 1),
-    # 'wait_for_downstream': False,
-    # 'dag': dag,
-    # 'adhoc':False,
-    # 'sla': timedelta(hours=2),
-    # 'execution_timeout': timedelta(seconds=300),
-    # 'on_failure_callback': callback_function,
-    # 'on_success_callback': callback_function,
-    # 'on_retry_callback': callback_function,
-    # 'trigger_rule': u'all_success'
 }
 
 dag = DAG(
