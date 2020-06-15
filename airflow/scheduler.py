@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 schedule_interval = timedelta(days=2)
 
 default_args = {
-    'owner': 'AndreyBozhko',
+    'owner': 'Peng Wei',
     'depends_on_past': False,
     'start_date': datetime.now() - schedule_interval,
     'email': ['weipeng0715@gmail.com'],
