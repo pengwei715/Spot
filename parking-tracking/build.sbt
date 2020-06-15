@@ -7,12 +7,11 @@ version := "0.0.1"
 scalaVersion := "2.11.12"
 
 libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.4.0" % "provided"
-//% "provided"
 libraryDependencies += "mrpowers" % "spark-daria" % "0.35.2-s_2.11" % "provided"
 libraryDependencies += "MrPowers" % "spark-fast-tests" % "0.20.0-s_2.11" % "test"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.1" % "test"
 libraryDependencies += "org.postgresql" % "postgresql" % "42.2.5"
-
+libraryDependencies += "org.yaml" % "snakeyaml" % "1.21"
 assemblyMergeStrategy in assembly := {
   case PathList("org","aopalliance", xs @ _*) => MergeStrategy.last
   case PathList("javax", "inject", xs @ _*) => MergeStrategy.last
