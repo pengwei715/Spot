@@ -1,0 +1,21 @@
+appname: "aggregate parking ticket"
+
+input_path: "s3a://chicago-parking-ticket/parking_aa"
+
+connectionUrl: "jdbc:postgresql://10.0.0.72/parking"
+driver: "org.postgresql.Driver"
+user: "parking_user"
+password: "zhimakaimen"
+
+ids: "ticket_number"
+date: "issue_date"
+year: "year"
+month: "month"
+hour: "hour"
+lng: "geocoded_lng"
+lat: "geocoded_lat"
+week_day: "week_day"
+week_of_month: "week_of_month"
+
+
+
