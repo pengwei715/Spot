@@ -3,8 +3,7 @@ from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 from datetime import datetime, timedelta
 
-
-schedule_interval = timedelta(days=2)
+schedule_interval = timedelta(seconds=10)
 
 default_args = {
     'owner': 'Peng Wei',
@@ -14,7 +13,7 @@ default_args = {
     'email_on_failure': False,
     'email_on_retry': False,
     'retries': 1,
-    'retry_delay': timedelta(minutes=5),
+    'retry_delay': timedelta(seconds=5),
 }
 
 dag = DAG(
@@ -26,7 +25,7 @@ dag = DAG(
 
 task = BashOperator(
     task_id='run_batch_job',
-    bash_command='cd /home/ubuntu/Spot/ ; ./spark-run.sh --batch',
+    bash_command='cd /home/ubuntu/Spot/airflow ; ./test.sh',
     dag=dag)
 
 

@@ -5,11 +5,11 @@ FILE=scheduler.py
 
 if [ ! -d $FOLDER ] ; then
 
-    mkdir $FOLDER
+    sudo mkdir $FOLDER
 
 fi
 
-cp $FILE $FOLDER/
+sudo cp $FILE $FOLDER/
 python $FOLDER/$FILE
 
 airflow initdb
