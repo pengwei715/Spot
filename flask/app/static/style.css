@@ -1,0 +1,396 @@
+@font-face {
+  font-family: "Lucida Sans Unicode", "Lucia Grande", san-serif;
+}
+
+html
+{ height: 100%;}
+
+*
+{ margin: 0;
+  padding: 0;}
+
+body
+{ font: normal 80% Helvetica, Helvetica, sans-serif;
+  color: #000;
+}
+
+/* tell the browser to render HTML 5 elements as block */
+article, aside, figure, footer, header, hgroup, nav, section {
+  display:block;
+}
+
+p
+{ padding: 0 0 10px 0;
+  line-height: 1.7em;
+  font-size: 100% }
+
+img
+{ border: 0;}
+
+h1, h2, h3, h4, h5, h6
+{ font: normal 220% 'Calibri', sans-serif;
+  color: #000;
+  letter-spacing: 1px;
+  margin: 10px 0px 10px 0px;}
+
+h2
+{ font: normal 180% 'Calibri', sans-serif;}
+
+h3
+{ font: normal 80% 'Calibri', sans-serif;}
+
+h4, h5, h6
+{ margin: 0;
+  padding: 0 0 0px 0;
+  font: normal 100% 'Calibri', sans-serif;
+  color: #000;
+  line-height: 1.5em;}
+
+h5, h6
+{ font: normal 75% 'Calibri', sans-serif;
+  color: #000;
+  padding-bottom: 15px;}
+
+span
+{ color: #000;
+  text-shadow: none;}
+
+a, a:hover
+{ color: #000;
+  background: transparent;
+  font-weight: bold;
+  outline: none;
+  text-decoration: underline;}
+
+a:hover
+{ text-decoration: none;}
+
+ul
+{ margin: 2px 0 22px 30px;
+  line-height: 1.7em;
+  font-style: normal;
+  font-size: 100%;}
+
+ol
+{ margin: 8px 0 22px 20px;}
+
+ol li
+{ margin: 0 0 11px 0;}
+
+#main, header, #banner, #menubar, #map-canvas, #site_content, footer, #content_grey, nav, #slideshow_container
+{ margin-left: auto;
+  margin-right: auto;}
+
+header
+{ height: 50px;
+  background: #FFF;}
+
+nav
+{ height: 50px;}
+
+#strapline
+{ width: 1280px;
+  height: 50px;
+  text-align: center;
+  margin: 0 auto;}
+
+#select-container
+{ height: 120px;
+  width:  1280px;
+  padding-top: 20px;}
+
+.styled-select select {
+   background: transparent;
+   width: 268px;
+   font: 250% 'Calibri';
+   padding: 5px;
+   font-size: 22px;
+   line-height: 2;
+   border: 2;
+   border-radius: 2;
+   height: 50px;
+   -webkit-appearance: none;
+}
+
+#map-container
+{ height: 600px;
+  width:  1280px;
+  padding-top: 10px;}
+
+#p_container
+{ height: 450px;
+  width:  940px;
+  min-width: 310px;
+  padding-top: 10px;}
+
+#d_container
+{ height: 450px;
+  width:  940px;
+  min-width: 310px;
+  padding-top: 10px;}
+
+#map-canvas
+{ height: 600px;
+  width:  1280px;
+  padding-top: 20px;}
+
+#welcome_slogan
+{ width: 1280px;
+  float: left;
+  height: 50px;
+  padding-top: 10px;
+  margin: 0 auto;}
+
+#welcome_slogan H3
+{ font: bold 350% 'Calibri', sans-serif;
+  letter-spacing: -3px;
+  color: #AAA;}
+
+#menubar
+{
+  font: normal 150% 'Calibri', sans-serif;
+  width: 800px;
+  height: 50px;
+  padding-top: 10px;
+  text-align: center;
+  margin: 0 auto;}
+
+ul#nav
+{ margin:0;}
+
+ul#nav li
+{ padding: 0 0 0 0px;
+  list-style: none;
+  margin: 2px 0 0 0;
+  display: inline;
+  background: transparent;}
+
+ul#nav li a
+{ float: center;
+  font: bold 130% 'Calibri', sans-serif;
+  height: 15px;
+  margin: 8px 20px 0 0;
+  text-shadow: 0px 1px 0px #000;
+  padding: 0px 20px 10px 20px;
+  background: transparent;
+  text-align: center;
+  color: #000;
+  text-decoration: none;}
+
+ul#nav li.current a, ul#nav li:hover a
+{ color: #000;
+  height: 18px;
+  background: #FFF;
+  text-shadow: none;}
+
+#slideshow_container
+{ height: 270px;
+  background: #0043A8;
+  padding-top: 20px;}
+
+.slideshow
+{ width: 940px;
+  height: 250px;
+  margin: 0 auto;}
+
+#site_content
+{ width: 1280px;
+  overflow: hidden;}
+
+.sidebar_container
+{ float: right;
+  margin: 20px 0 0 10px;
+  width: 240px;}
+
+.sidebar
+{ float: left;
+  width: 240px;
+  margin-bottom: 10px;}
+
+.sidebar_item
+{ font: normal 100% Helvetica, Helvetica, sans-serif;
+  width: 240px;}
+
+.sidebar h2
+{ padding: 5px 0 0 0;
+  font: normal 140% 'Calibri', sans-serif;
+  height: 30px;}
+
+#content
+{ width: 1280px;
+  margin: 0 0 20px 0;
+  float: left;}
+
+.content_item
+{
+  font: normal 200% 'Calibri', sans-serif;
+  width: 1280px;}
+
+.content_container
+{ width: 330px;
+  margin: 20px 10px 0 0;
+  float: left;}
+
+footer
+{ width: 1280px;
+  height: 24px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  font: bold 90% 'Calibri', sans-serif;
+  text-align: center;
+  text-shadow: 1px 1px #000;
+  color: #000;
+  background: #DBDBDB;
+  -moz-border-radius: 15px 15px 15px 15px;
+  -webkit-border: 15px 15px 15px 15px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;}
+
+footer a
+{  color: #000;
+  text-decoration: none;}
+
+footer a:hover
+{  text-decoration: underline;}
+
+ .readmore a
+{ color: #FFF;
+  text-shadow: 1px 1px #004C8C;}
+
+ .button_small
+{ font: normal 110% Helvetica, Helvetica, sans-serif;
+  float: left;
+  height: 15px;
+  padding: 5px 10px 7px 8px;
+  background: #0043A8;
+  background: -moz-linear-gradient(#43A9FF, #0043A8);
+  background: -o-linear-gradient(#43A9FF, #0043A8);
+  background: -webkit-linear-gradient(#43A9FF, #0043A8);
+  border-radius: 15px 15px 15px 15px;
+  -moz-border-radius: 15px 15px 15px 15px;
+  -webkit-border: 15px 15px 15px 15px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;}
+
+.button_small a
+{ color: #FFF;
+  padding-left: 5px;
+  text-shadow: 1px 1px #000;}
+
+.form_settings
+{ margin: 15px 0 0 0;}
+
+.form_settings p
+{ padding: 0 0 4px 0;}
+
+.form_settings span
+{ float: left;
+  width: 280px;
+  text-align: left;
+  text-shadow: none;
+  color: #FFF;}
+
+.form_settings input, .form_settings textarea
+{ padding: 2px;
+  width: 699px;
+  font: 100% arial;
+  border: 1px solid #E5E5DB;
+  background: #FFF;
+  color: #47433F;}
+
+.form_settings input[type="checkbox"]
+{ padding: 2px 0;
+  width: 15px;
+  font: 100% arial;
+  border: 0;
+  background: #FFF;
+  color: #47433F;
+  margin: 28px 0;}
+
+.form_settings .submit
+{ font: 100% arial;
+  border: 1px solid;
+  width: 99px;
+  margin: 0 0 0 206px;
+  height: 26px;
+  padding: 2px 0 3px 0;
+  cursor: pointer;
+  background: #0043A8;
+  background: -moz-linear-gradient(#43A9FF, #0043A8);
+  background: -o-linear-gradient(#43A9FF, #0043A8);
+  background: -webkit-linear-gradient(#43A9FF, #0043A8);
+  color: #FFF;
+  border-radius: 7px 7px 7px 7px;
+  -moz-border-radius: 7px 7px 7px 7px;
+  -webkit-border: 7px 7px 7px 7px;}
+
+/* Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
