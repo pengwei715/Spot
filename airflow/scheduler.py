@@ -3,7 +3,6 @@ from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 from datetime import datetime, timedelta
 
-
 schedule_interval = timedelta(days=2)
 
 default_args = {
@@ -26,7 +25,7 @@ dag = DAG(
 
 task = BashOperator(
     task_id='run_batch_job',
-    bash_command='cd /home/ubuntu/Spot/ ; ./spark-run.sh --batch',
+    bash_command='cd /home/ubuntu/Spot/airflow ; ./spark-run.sh',
     dag=dag)
 
 
