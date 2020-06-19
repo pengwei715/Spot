@@ -1,4 +1,4 @@
-host: 10.0.0.72:5432
+host: 10.0.0.72
 dbname: parking
 user: postgres
 password: zhimakaimen

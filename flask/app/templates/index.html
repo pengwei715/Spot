@@ -4,7 +4,7 @@
   <title>SPOT!</title>
   <link rel="stylesheet" type="text/css" href="static/style.css" />
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=" type="text/javascript"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=******" type="text/javascript"></script>
   {% block scripts %}
   <script type="text/javascript" src="static/initmap.js"></script>
   {% endblock %}
@@ -13,14 +13,12 @@
 <body>
 <div id="main">
 <header style="width: 1280px; padding-top: 15px; padding-bottom: 15px;">
-    <div style="float: left; font-size: 32px;">  <a href="/">Spot!</a> </div>
+    <div style="float: left; font-size: 32px;">  <a href="/">SPOT!</a> </div>
     <div style="float: right;">
-      <form action="{{ url_for('getTime') }}" method="post">
+      <form action='track' method='get' align='center'>
         <br> Time: <input id="timestr" type="text" value="" placeholder="nothing to display yet"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-	<input type="submit">
-      </form>
-      <form action="{{ url_for('getUnit') }}" method="post">
-	Enter the time unit: <input type="text" name="time_uni">
+	Enter the time unit: <input id="unit" type="text" name="time_unit" value="" placeholder="hour">
+	Enter the address: <input id="address" type="text" name="typed_address" value="">
 	<input type="submit" onclick="window.location.href='/track'">
       </form>
     </div>
@@ -28,22 +26,21 @@
 
   <div id="site_content">
     <div id="map-container" style="padding-top: 0px;">
-       <div id="map-canvas"></div>
-       <!--our form-->
+      <div id="map-canvas"></div>
     </div>
     <div id="content">
       <div class="content_item">
         <footer style="padding-top: 30px;">
           <span style="float: left; color:#FFF">
-            &nbsp&nbsp&nbsp&nbsp <a href="weipeng0715@gmail.com">Peng Wei</a>
+            &nbsp&nbsp&nbsp&nbsp <a href="mailto:weipeng0715@gmail.com">Peng Wei</a>
           </span>
           <span style="float: center">
-            <a href="" target="_blank">Slideshare</a>       |
+            <a href="https://docs.google.com/presentation/d/15FGUGp2E0Q43gcZT8O2wj_7muSNEqu1SvTBXHcGNzOQ/edit?usp=sharing" target="_blank">Slideshare</a>       |
             <a href="" target="_blank">Video</a>
           </span>
           <span style="float: right; color:#000">
-            <a href="">Github</a>     |
-            <a href="">LinkedIn</a>	&nbsp&nbsp&nbsp&nbsp
+            <a href="https://www.github.com/pengwei715">Github</a>     |
+            <a href="https://www.linkedin.com/in/pengwei715/">LinkedIn</a>	&nbsp&nbsp&nbsp&nbsp
           </span>
         </footer>
       </div>
