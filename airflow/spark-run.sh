@@ -1,1 +1,1 @@
-/usr/local/sparkbin/spark-submit --class batch.Aggregator --executor-memory 4G --total-executor-cores 4 ~/Spot/parking-tracking/target/scala-2.11/parking-tracking-assembly-0.0.1.jar 100 2>&1 | tee temp.txt
+/usr/local/sparkbin/spark-submit --class batch.Aggregator --executor-memory 4G --total-executor-cores 4 ~/Spot/spark_batch/target/scala-2.11/parking-tracking-assembly-0.0.1.jar 100 2>&1 | tee temp.txt
