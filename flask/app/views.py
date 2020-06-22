@@ -60,13 +60,15 @@ def track():
     elif unit == 'day': unit_num = time_obj.day
     elif unit == 'week_day': unit_num = time_obj.weekday()
     
-    gmaps = googlemaps.Client(key = "*******")
+    gmaps = googlemaps.Client(key = "******")
     res = gmaps.geocode(address)[0]['geometry']['location']
     lng_id = floor((res['lng']+87.79)/0.0025)
     lat_id = floor((res['lat']-41.63)/0.0025)
     sql = "select {}_avg, {}_count from {}_table where {} = '{}' and lng_id = {} and lat_id = {}".format(unit, unit, unit, unit, unit_num, lng_id, lat_id)
-    data = fetch_from_postgres(sql)[0]
-    rate = data[1]/data[0]
+    data = fetch_from_postgres(sql)
+    if not data:
+        return render_template('index.html')
+    rate = data[0][1]/data[0][0]
     color = ""
     if rate > 1.5:
         color = "#FF0000"
@@ -76,4 +78,4 @@ def track():
         color = "#008000"
     app.color = color
     app.carloc = [res['lng'], res['lat']]
-    return render_template('track.html', color = app.color, lat = res['lat'], lng = res['lng'], avg=data[0], count = data[1])
+    return render_template('track.html', color = app.color, lat = res['lat'], lng = res['lng'], avg=data[0][0], count = data[0][1])
