@@ -9,6 +9,7 @@ import psycopg2
 import yaml
 from collections import OrderedDict
 import googlemaps
+import pdb
 
 # configure connection string for PostgreSQL database
 def loadconfig(file):
@@ -54,16 +55,17 @@ def track():
     unit = request.args.get("time_unit", default = 'hour', type=str)
     address = request.args.get("typed_address", default = 'the university of chicago', type=str)
     
+    unit_num = -1
     time_obj = datetime.strptime(timestr, '%Y-%m-%d %H:%M:%S')
     if unit == 'hour': unit_num = time_obj.hour
     elif unit == 'month': unit_num = time_obj.month
     elif unit == 'day': unit_num = time_obj.day
     elif unit == 'week_day': unit_num = time_obj.weekday()
-    
-    gmaps = googlemaps.Client(key = "*****")
-    res = gmaps.geocode(address)[0]['geometry']['location']
-    if not res:
+
+    if not address:
         return render_template('index.html')
+    gmaps = googlemaps.Client(key = "********")
+    res = gmaps.geocode(address)[0]['geometry']['location']
     lng_id = floor((res['lng']+87.79)/0.0025)
     lat_id = floor((res['lat']-41.63)/0.0025)
     sql = "select {}_avg, {}_count from {}_table where {} = '{}' and lng_id = {} and lat_id = {}".format(unit, unit, unit, unit, unit_num, lng_id, lat_id)
