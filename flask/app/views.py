@@ -49,7 +49,8 @@ def index():
 
 @app.route('/track')
 def track():
-    timestr = request.args.get('timestr', default='2019-08-07 14:00:00', type=str)
+    default_timestr = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    timestr = request.args.get('timestr', default=default_timestr, type=str)
     unit = request.args.get("time_unit", default = 'hour', type=str)
     address = request.args.get("typed_address", default = 'the university of chicago', type=str)
     
@@ -58,11 +59,8 @@ def track():
     elif unit == 'month': unit_num = time_obj.month
     elif unit == 'day': unit_num = time_obj.day
     elif unit == 'week_day': unit_num = time_obj.weekday()
-
-    if not time_obj:
-        return render_template('index.html')
     
-    gmaps = googlemaps.Client(key = "****")
+    gmaps = googlemaps.Client(key = "*******")
     res = gmaps.geocode(address)[0]['geometry']['location']
     lng_id = floor((res['lng']+87.79)/0.0025)
     lat_id = floor((res['lat']-41.63)/0.0025)
