@@ -59,10 +59,10 @@ def track():
     elif unit == 'day': unit_num = time_obj.day
     elif unit == 'week_day': unit_num = time_obj.weekday()
 
-    if not unit_num:
+    if not time_obj:
         return render_template('index.html')
     
-    gmaps = googlemaps.Client(key = "********")
+    gmaps = googlemaps.Client(key = "****")
     res = gmaps.geocode(address)[0]['geometry']['location']
     lng_id = floor((res['lng']+87.79)/0.0025)
     lat_id = floor((res['lat']-41.63)/0.0025)
