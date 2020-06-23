@@ -10,7 +10,7 @@ Visit [datapipeline.online](http://datapipeline.online) to see it in action (or 
 
 1. [Usage](README.md#Usage)
 1. [System](README.md#System)
-1. [Data Source](README.md#Data-Source)
+1. [Data Source](README.md#Data-Sources)
 1. [Setup](README.md#setup)
 1. [Starting the pipeline](README.md#starting-the-pipeline)
 1. [Contact Information](README.md#contact-information)
@@ -58,9 +58,47 @@ Install and configure [AWS CLI](https://aws.amazon.com/cli/) and [Pegasus](https
 - (1 node) Flask
 
 ```
-
-
+peg up ./cluster_configs/spark/master.yml
+peg up ./cluster_configs/spark/worker.yml
+peg up ./cluster_configs/post_node.yml
+peg up ./cluster_configs/flask_node.yml
 ```
+
+For each cluster, install the services.
+
+#### spark cluster
+```
+peg service install spark_cluster aws
+peg service install spark_cluster environment
+peg service install spark_cluster hadoop
+peg service install spark_cluster spark
+```
+Config spark cluster and sync the hadoop and spark configs among nodes.
+```
+bash ./cluster_configs/sync_scripts/sync_h.sh
+bash ./cluster_configs/sync_scripts/sync_s.sh
+```
+
+#### postgres node & flask node
+```
+peg service install post_node aws
+peg service install post_node environment
+peg service install flask_node aws
+peg service install flask_node environment
+```
+On the postgres node install postgres
+```
+sudo apt-get update && sudo apt-get -y upgrade
+sudo apt-get install postgresql postgresql-contrib​
+```
+On the flask node install flask
+```
+sudo apt-get install python3-pip
+pip install Flask
+```
+
+
+
 
 
 
