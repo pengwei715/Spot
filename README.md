@@ -28,7 +28,7 @@ The system requires three inputs.
 - Time units (hour, week day, week of month, day of month). 
 - Address
 
-![Demo_gif](./doc/Spot_demo.gif)
+![Demo_gif](./img/Spot_demo.gif)
 
 For example, the first query above means that 1 pm parking near the University of Chicago is more likely to get a parking ticket compared to the other hours.
 
@@ -37,7 +37,7 @@ For example, the first query above means that 1 pm parking near the University o
 
 The parking ticket data is stored in S3 bucket. Spark fetch the data, add the spatial index and abstract the useful time information, then aggregate the data based on spatial and temporal buffers. Store the result into postgres. 
 
-![system_png](./doc/system.png)
+![system_png](./img/system.png)
 
 ---
 
