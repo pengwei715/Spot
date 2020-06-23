@@ -12,7 +12,7 @@ Visit [datapipeline.online](http://datapipeline.online) to see it in action (or 
 1. [System](README.md#System)
 1. [Data Source](README.md#Data-Sources)
 1. [Setup](README.md#setup)
-1. [Starting the pipeline](README.md#starting-the-pipeline)
+1. [Run the system](README.md#run-the-system)
 1. [Contact Information](README.md#contact-information)
 
 ***
@@ -73,6 +73,15 @@ peg service install spark_cluster environment
 peg service install spark_cluster hadoop
 peg service install spark_cluster spark
 ```
+
+Install airflow on leader node of spark cluster
+
+```
+sudo apt-get install python3-pip
+sudo python3 -m pip install apache-airflow
+```
+
+
 Config spark cluster and sync the hadoop and spark configs among nodes.
 ```
 bash ./cluster_configs/sync_scripts/sync_h.sh
@@ -96,9 +105,40 @@ On the flask node install flask
 sudo apt-get install python3-pip
 pip install Flask
 ```
+---
 
+## Run the system
 
+#### Compile scala project
+Generate the fat jar using sbt tools.
+```
+cd spark_batch
+sbt clean
+sbt compile
+sbt assembly
+```
 
+#### Run spark job
 
+After compile the jar file. Submit the job to spark to run. 
+```
+bin/spark-submit --class com.spot.parking.tracking.Aggregateor --master yarn --deploy-mode client ~/Spot/parking-tracking/target/scala-2.11/parking-tracking-assembly-0.0.1.jar
+```
 
+#### Schedule job
 
+Running airflow/schedule.sh on the master of spark cluster will add the batch job to the scheduler. The batch job is set to execute every 24 hours
+```
+bash airflow/schedule.sh
+```
+
+#### Run web app
+On the flask node
+```
+sudo python3 flask/run.py
+```
+
+## Contact Information
+
+* [LinkedIn](https://www.linkedin.com/in/pengwei715)
+* weipeng0715@gmail.com
