@@ -41,7 +41,7 @@ The parking ticket data is stored in S3 bucket. Spark fetch the data, add the sp
 
 ---
 
-## Data Sources
+## Data Source
 
   [Chicago parking tickets](https://www.propublica.org/datastore/dataset/chicago-parking-ticket-data)
 
