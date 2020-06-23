@@ -10,7 +10,7 @@ Visit [datapipeline.online](http://datapipeline.online) to see it in action (or 
 
 1. [Usage](README.md#Usage)
 1. [System](README.md#System)
-1. [Data Source](README.md#Data-Sources)
+1. [Data Source](README.md#Data-Source)
 1. [Setup](README.md#setup)
 1. [Run the system](README.md#run-the-system)
 1. [Contact Information](README.md#contact-information)
