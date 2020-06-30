@@ -5,7 +5,7 @@
   <link rel="stylesheet" type="text/css" href="static/style.css" />
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=******" type="text/javascript"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=*****" type="text/javascript"></script>
   {% block scripts %}
   <script type="text/javascript" src="static/initmap.js"></script>
   {% endblock %}
@@ -17,7 +17,7 @@
     <div style="float: left; font-size: 32px;">  <a href="/">SPOT!</a> </div>
     <div style="float: right;">
       <form action='track' method='get' align='center'>
-        <br> Time: <input id="timestr" type="text" value="" placeholder="current time"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <br> Time: <input id="timestr" type="text" name = "time_string" value="" placeholder="current time"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 	Enter the time unit: <input id="unit" type="text" name="time_unit" value="" placeholder="hour">
 	Enter the address: <input id="address" type="text" name="typed_address" value="">
 	<input type="submit" onclick="window.location.href='/track'">

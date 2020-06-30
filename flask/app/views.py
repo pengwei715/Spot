@@ -9,7 +9,6 @@ import psycopg2
 import yaml
 from collections import OrderedDict
 import googlemaps
-import pdb
 
 # configure connection string for PostgreSQL database
 def loadconfig(file):
@@ -48,7 +47,7 @@ def index():
 
 @app.route('/track')
 def track():
-    timestr = request.args.get('timestr', default='%Y-%m-%d %H:%M:%S', type=str)
+    timestr = request.args.get('time_string', default='%Y-%m-%d %H:%M:%S', type=str)
     unit = request.args.get("time_unit", default = 'hour', type=str)
     address = request.args.get("typed_address", default = 'the university of chicago', type=str)
     unit_num = -1
