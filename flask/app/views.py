@@ -40,8 +40,6 @@ def fetch_from_postgres(query):
     return data
 
 
-# define the behavior when accessing routes '/', '/index', '/demo', '/track' and '/query'
-
 @app.route('/')
 @app.route('/index')
 def index():
@@ -50,12 +48,14 @@ def index():
 
 @app.route('/track')
 def track():
-    default_timestr = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    timestr = request.args.get('timestr', default=default_timestr, type=str)
+    timestr = request.args.get('timestr', default='%Y-%m-%d %H:%M:%S', type=str)
     unit = request.args.get("time_unit", default = 'hour', type=str)
     address = request.args.get("typed_address", default = 'the university of chicago', type=str)
-    
     unit_num = -1
+    default_timestr = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    if timestr == '%Y-%m-%d %H:%M:%S':
+        timestr = default_timestr
+
     time_obj = datetime.strptime(timestr, '%Y-%m-%d %H:%M:%S')
     if unit == 'hour': unit_num = time_obj.hour
     elif unit == 'month': unit_num = time_obj.month
@@ -74,9 +74,9 @@ def track():
         return render_template('index.html')
     rate = data[0][1]/data[0][0]
     color = ""
-    if rate > 1.5:
+    if rate > 1.0:
         color = "#FF0000"
-    elif 0.8 < rate < 1.5:
+    elif 0.8 < rate < 1.0:
         color = "#FFF000"
     elif rate < 0.8:
         color = "#008000"
